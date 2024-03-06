@@ -5,7 +5,7 @@ public abstract class MedicineComponent implements Comparable<MedicineComponent>
     private float weight;
     private int power;
 
-    public MedicineComponent(String name, float weight, int power) {
+    public MedicineComponent(String name, float weight) {
         this.name = name;
         this.weight = weight;
         this.power = power;

@@ -1,6 +1,7 @@
 package org.example.pharmacy;
 
 import org.example.pharmacy.impl.Asitromin;
+import org.example.pharmacy.impl.Panadol;
 import org.example.pharmacy.impl.Penicilinium;
 import org.example.pharmacy.impl.Vetbicid;
 
@@ -8,6 +9,7 @@ import java.util.Iterator;
 
 public class Program {
     public static void main(String[] args) {
+        Panadol pan = new Panadol("Panad", 75, 94);
         Asitromin asitr = new Asitromin("Asitro", 50, 70);
         Penicilinium penicilinium = new Penicilinium("Penicil", 30, 50);
         Vetbicid vetbic = new Vetbicid("Vetbic", 40, 30);

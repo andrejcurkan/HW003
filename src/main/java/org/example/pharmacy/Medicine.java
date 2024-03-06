@@ -1,16 +1,14 @@
 package org.example.pharmacy;
 
 import java.util.ArrayList;
-import java.util.Iterator;
+import java.util.Collections;
 import java.util.List;
 
-public class Medicine implements Iterator<MedicineComponent> {
+public class Medicine implements Comparable {
     private List<MedicineComponent> components;
-    private int index;
 
     public Medicine() {
         this.components = new ArrayList<>();
-        this.index = 0;
     }
 
     public Medicine addComponent(MedicineComponent component) {
@@ -18,21 +16,21 @@ public class Medicine implements Iterator<MedicineComponent> {
         return this;
     }
 
-
     @Override
-    public boolean hasNext() {
-//        return components.iterator().hasNext();
-        return index < components.size();
+    public int compareTo(Medicine other) {
+
+        return Integer.compare(this.components.size(), other.components.size());
     }
 
     @Override
-    public MedicineComponent next() {
-//        return components.iterator().next();
-        return components.get(index++);
+    public int compareTo(MedicineComponent o) {
+        return 0;
     }
 
     @Override
     public String toString() {
         return "Medicine: " + components.toString();
     }
+
+
 }
