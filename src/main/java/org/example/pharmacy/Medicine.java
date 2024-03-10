@@ -31,6 +31,10 @@ public class Medicine implements Comparable {
     public String toString() {
         return "Medicine: " + components.toString();
     }
-
+    
+    @Override
+    public int compareTo(Medicine o) {
+        return this.components.size() - o.components.size();
+    }
 
 }
