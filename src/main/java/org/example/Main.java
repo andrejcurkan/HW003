@@ -9,57 +9,38 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.Collections;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-
-
-
+public class Main {
     public static void main(String[] args) {
-        ArrayList<MedicineComponent> medList = new ArrayList<>();
-        Asitromin asitr = new Asitromin("Asitro", 50, 25);
-        Penicilinium penicilinium = new Penicilinium("Penicil", 30, 50);
-        Vetbicid vetbic = new Vetbicid("Vetbic", 40, 30);
-        Nozivin noz = new Nozivin("Noziv", 410, 13);
-        Panadol pan = new Panadol("Pan", 111, 81);
-
-        medList.add(asitr);
-        medList.add(penicilinium);
-        medList.add(vetbic);
-        medList.add(noz);
-        medList.add(pan);
-
-        Medicine2 medicine1 = new Medicine2();
-        Medicine medicine = new Medicine();
-
-        // Добавляем MedicineComponent в Medicine
-        for (MedicineComponent component : medList) {
-            medicine.addComponent(component);
-        }
+        // Создаем несколько экземпляров Medicine
+        Medicine medicine1 = new Medicine().addComponent(new MedicineComponent("Component A", 55, 85))
+                .addComponent(new MedicineComponent("Component B", 77, 15));
+        Medicine medicine2 = new Medicine().addComponent(new MedicineComponent("Component C", 10, 66))
+                .addComponent(new MedicineComponent("Component D", 8, 23))
+                .addComponent(new MedicineComponent("Component E", 7, 50));
+        Medicine medicine3 = new Medicine().addComponent(new MedicineComponent("Component F", 8, 99));
 
 
-        printSortedMedicine(medicine);
+        ArrayList<Medicine> medicines = new ArrayList<>();
+        medicines.add(medicine1);
+        medicines.add(medicine2);
+        medicines.add(medicine3);
+
+
+        printSortedMedicine(medicines);
     }
 
-    public static void printSortedMedicine(Medicine medicine) {
+    public static void printSortedMedicine(ArrayList<Medicine> medicines) {
 
-        List<Medicine> medicineList = new ArrayList<>();
-        medicineList.add(medicine);
-
+        Collections.sort(medicines);
 
 
-
-
-        for (Medicine med : medicineList) {
-            System.out.println(med);
+        for (Medicine medicine : medicines) {
+            System.out.println(medicine);
         }
     }
+}
 
+
+
+  
